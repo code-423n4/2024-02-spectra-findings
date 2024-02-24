@@ -1,0 +1,11 @@
+{
+  "contest": 338,
+  "handle": "TragedyOTCommons",
+  "crew": [
+    "IllIllI"
+  ],
+  "risk": "2",
+  "title": "Contracts are vulnerable to fee-on-transfer accounting-related issues",
+  "issueId": 6,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/6"
+}
