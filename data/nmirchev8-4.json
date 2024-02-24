@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "nmirchev8",
+  "risk": "2",
+  "title": "`maxWithdraw` & `maxRedeem` would revert when contract is paused, which violates ERC5095",
+  "issueId": 4,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/4"
+}
