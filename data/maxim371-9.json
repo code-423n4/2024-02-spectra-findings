@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "maxim371",
+  "risk": "2",
+  "title": "users can't claim their rewards due to errors in PrincipalToken.sol::claimRewards",
+  "issueId": 9,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/9"
+}
