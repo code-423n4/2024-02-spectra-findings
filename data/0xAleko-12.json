@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "0xAleko",
+  "risk": "2",
+  "title": "Missed ERC20.approve() to PrincipalToken in PrincipalToken.deposit() ",
+  "issueId": 12,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/12"
+}
