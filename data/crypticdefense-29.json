@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "crypticdefense",
+  "risk": "2",
+  "title": "balanceOf returns 0 after maturity",
+  "issueId": 29,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/29"
+}
