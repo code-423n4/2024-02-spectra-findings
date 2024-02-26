@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "crypticdefense",
+  "risk": "2",
+  "title": "Precision loss due to division before multiplication",
+  "issueId": 27,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/27"
+}
