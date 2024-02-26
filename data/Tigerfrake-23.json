@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "Tigerfrake",
+  "risk": "2",
+  "title": "IERC4626::redeem() not according to spec and may result in loss of funds",
+  "issueId": 23,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/23"
+}
