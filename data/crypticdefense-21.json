@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "crypticdefense",
+  "risk": "2",
+  "title": "Assigning admin role lacks 2 step process",
+  "issueId": 21,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/21"
+}
