@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "crypticdefense",
+  "risk": "3",
+  "title": "PrincipalToken vaults can be shutdown/disrupted",
+  "issueId": 26,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/26"
+}
