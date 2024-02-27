@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "mrudenko",
+  "risk": "2",
+  "title": "maxRedeem Function Fails to Return 0 When Protocol Is Paused",
+  "issueId": 51,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/51"
+}
