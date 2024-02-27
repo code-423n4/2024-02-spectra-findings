@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "Banditx0x",
+  "risk": "3",
+  "title": "Flashloan Re-entrancy Attack",
+  "issueId": 45,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/45"
+}
