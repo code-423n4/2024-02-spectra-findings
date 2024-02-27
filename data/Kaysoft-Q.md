@@ -70,3 +70,23 @@ function flashLoan(
     }
 
 ```
+
+## [L-2] Division before multiplication could incur precision loss
+
+There is a division by `_oldIBTRate`  on line 72 below to get `ibtOfPTInRay` before `ibtOfPTInRay` is multiplied by the result of `_ibtRate - _oldIBTRate` on line 75 to get the `newYieldInIBTRay`.
+
+Consider implementing all multiplication first in order not to incur precision loss.
+
+https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/libraries/PrincipalTokenUtil.sol#L72C8-L75C86
+```
+File: PrincipalTokenUtil.sol
+55: function _computeYield(
+...
+72: uint256 ibtOfPTInRay = userYTBalanceInRay.mulDiv(_oldPTRate, _oldIBTRate);
+73:        if (_oldPTRate == _ptRate && _ibtRate > _oldIBTRate) {
+74:            // only positive yield happened
+75:            newYieldInIBTRay = ibtOfPTInRay.mulDiv(_ibtRate - _oldIBTRate, _ibtRate);//@audit div before mul
+```
+
+Recommendation:
+Consider implementing all the division last whenever there is operations involving multiplication and division
