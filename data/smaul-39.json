@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "smaul",
+  "risk": "2",
+  "title": "PrincipalToken Contract Deployment Can Be Failed Even For Valid ERC4626",
+  "issueId": 39,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/39"
+}
