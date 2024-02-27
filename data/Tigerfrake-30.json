@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "Tigerfrake",
+  "risk": "2",
+  "title": "Inadequate Validation in Deposit Function Allows Unauthorized Deposits and Post-Maturity Actions",
+  "issueId": 30,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/30"
+}
