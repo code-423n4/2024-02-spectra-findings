@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "atoko",
+  "risk": "2",
+  "title": " Dependency on `whenNotPaused` Modifier in Withdraw and Redeem Functions",
+  "issueId": 57,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/57"
+}
