@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "FastChecker",
+  "risk": "2",
+  "title": "`PrincipalTokenUtil.sol` has rounding errors. The `Pricipaltoken.sol#_depositIBT` function calls the `PrincipalTokenUtil.sol#_computeTokenizationFee` function. At that time a rounding error occurs in the `PrincipalTokenUtil.sol#_computeTokenizationFee` function.",
+  "issueId": 71,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/71"
+}
