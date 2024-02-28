@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "MatricksDeCoder",
+  "risk": "2",
+  "title": "ERC4626 Vault may be susceptible to underlying asset and vault token different decimals ",
+  "issueId": 64,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/64"
+}
