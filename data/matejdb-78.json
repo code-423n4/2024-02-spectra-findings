@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "matejdb",
+  "risk": "2",
+  "title": "User can burn YT without burning PT hence breaking a main invariant",
+  "issueId": 78,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/78"
+}
