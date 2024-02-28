@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "FastChecker",
+  "risk": "3",
+  "title": "Since users receive a accumulated fee, the protocol suffers a loss. Malicious users increase their profits by repeatedly calling the `PrincipalToken.sol#redeem` function and `PrincipalToken.sol#claimYield` function alternately, and the protocol suffers corresponding losses.",
+  "issueId": 72,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/72"
+}
