@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "FastChecker",
+  "risk": "3",
+  "title": "Some errors appear in the `PrincipalToken.sol#initialize` function because the previous ptRate is not kept after expiry.",
+  "issueId": 73,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/73"
+}
