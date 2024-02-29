@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "xchen1130",
+  "risk": "2",
+  "title": "Upgradeable contract \"PrincipalToken\" should have storage gaps for future upgrades",
+  "issueId": 90,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/90"
+}
