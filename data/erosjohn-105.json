@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "erosjohn",
+  "risk": "2",
+  "title": "PrincipalToken.sol#maxDeposit, maxWithdraw and maxRedeem should return 0 when pausing",
+  "issueId": 105,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/105"
+}
