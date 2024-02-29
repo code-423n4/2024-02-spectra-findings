@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "Giorgio",
+  "risk": "2",
+  "title": "maxWithdraw() will revert when paused but should return 0 instead",
+  "issueId": 118,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/118"
+}
