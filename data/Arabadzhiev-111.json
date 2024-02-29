@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "Arabadzhiev",
+  "risk": "3",
+  "title": "In a specific scenario, all yield generated in the IBT vault can be drained by performing a vault deflation attack using the flash loan functionality of the Principal Token contract",
+  "issueId": 111,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/111"
+}
