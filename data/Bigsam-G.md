@@ -1,4 +1,6 @@
-Consider nesting currentIBTRATE equation in an else statement. I have provided 2 code snippets, the first one is more gas-efficient. Let's go through the reasoning:
+Consider nesting the currentIBTRATE equation in the PrincipalToken.sol in an else statement.
+https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/tokens/PrincipalToken.sol#L902-L905 
+Based on my analysis I have provided 2 code snippets, the first one is more gas-efficient and the second one is being used presently by the contract. Let's go through the reasoning:
 
 ### Code Snippet 1:
 
@@ -19,7 +21,10 @@ function _getCurrentPTandIBTRates(bool roundUpPTRate) internal view returns (uin
         : ptRate;
     return (currentPTRate, currentIBTRate);
 }
+
 ```
+Result from testing this with foundry 
+[PASS] test_getCurrentPTandIBTRates(bool) (runs: 1024, μ: 59113, ~: 59113)
 
 ### Code Snippet 2 used by the contract:
 
@@ -39,6 +44,9 @@ function _getCurrentPTandIBTRates(bool roundUpPTRate) internal view returns (uin
     return (currentPTRate, currentIBTRate);
 }
 ```
+Test result from foundry
+[PASS] test_getCurrentPTandIBTRates(bool) (runs: 1024, μ: 59137, ~: 59137)
+
 
 ### Considerations:
 
