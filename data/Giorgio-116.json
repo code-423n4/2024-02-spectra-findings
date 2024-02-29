@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "Giorgio",
+  "risk": "2",
+  "title": "maxRedeem() should return 0 when redemptions are paused",
+  "issueId": 116,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/116"
+}
