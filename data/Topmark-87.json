@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "Topmark",
+  "risk": "2",
+  "title": "msg.value can be Greater than Zero even when Data is Empty",
+  "issueId": 87,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/87"
+}
