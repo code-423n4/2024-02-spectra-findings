@@ -19,3 +19,30 @@ https://github.com/code-423n4/2024-02-spectra/blob/main/src/tokens/PrincipalToke
     ...
 ```
 ###  Report 2:
+#### Inconsistent Value conversion
+The two functions provided below shows how conversion is done between IBTS and Shares however a look at how _ptRate and _ibtRate is derived shows that one of the function used false parameter with _getPTandIBTRates(...) function call while the other uses true, this will create inconsistency in value conversion and can be taken advantage of by bad actors
+https://github.com/code-423n4/2024-02-spectra/blob/main/src/tokens/PrincipalToken.sol#L684/PrincipalToken.sol#L684
+https://github.com/code-423n4/2024-02-spectra/blob/main/src/tokens/PrincipalToken.sol#L702
+```solidity
+   function _convertIBTsToShares(
+        uint256 _ibts,
+        bool _roundUp
+    ) internal view returns (uint256 shares) {
+>>>        (uint256 _ptRate, uint256 _ibtRate) = _getPTandIBTRates(false);
+        if (_ptRate == 0) {
+            revert RateError();
+        }
+        shares = _ibts.mulDiv(
+            _ibtRate,
+            _ptRate,
+            _roundUp ? Math.Rounding.Ceil : Math.Rounding.Floor
+        );
+    }
+    function _convertIBTsToSharesPreview(uint256 ibts) internal view returns (uint256 shares) {
+>>>        (uint256 _ptRate, uint256 _ibtRate) = _getPTandIBTRates(true); // to round up the shares, the PT rate must round down
+        if (_ptRate == 0) {
+            revert RateError();
+        }
+        shares = ibts.mulDiv(_ibtRate, _ptRate);
+    }
+```
