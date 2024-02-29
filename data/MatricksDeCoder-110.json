@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "MatricksDeCoder",
+  "risk": "2",
+  "title": "Protocol may not work well with pausable underlying assets or ibts token vault that can pause transfers ",
+  "issueId": 110,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/110"
+}
