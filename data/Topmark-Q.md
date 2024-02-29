@@ -100,6 +100,38 @@ https://github.com/code-423n4/2024-02-spectra/blob/main/src/tokens/PrincipalToke
     ...
 ```
 ###  Report 5:
+#### Zero Return instead of Reversion
+A look at implementation of _computeYield(...) function shows that whenever the yield to be calculated would be zero the function reverts however that is not the case in the pointer noted in the code below, the compute yield function would return zero instead of reverting, this should be corrected by the protocol
+https://github.com/code-423n4/2024-02-spectra/blob/main/src/libraries/PrincipalTokenUtil.sol#L110
+```solidity
+function _computeYield(
+        address _user,
+        uint256 _userYieldIBT,
+        uint256 _oldIBTRate,
+        uint256 _ibtRate,
+        uint256 _oldPTRate,
+        uint256 _ptRate,
+        address _yt
+    ) external view returns (uint256) {
+...
+     uint256 expectedNegativeYieldInAssetRay = Math.ceilDiv(
+                        ibtOfPTInRay * (_oldIBTRate - _ibtRate),
+                        RayMath.RAY_UNIT
+                    );
+                    yieldInAssetRay = expectedNegativeYieldInAssetRay >
+                        actualNegativeYieldInAssetRay
+ >>>                       ? 0
+                        : actualNegativeYieldInAssetRay - expectedNegativeYieldInAssetRay;
+                    yieldInAssetRay = yieldInAssetRay.fromRay(
+                        IERC4626(IPrincipalToken(IYieldToken(_yt).getPT()).underlying()).decimals()
+                    ) < SAFETY_BOUND
+                        ? 0
+                        : yieldInAssetRay;
+                }
+...
+}
+```
+###  Report 6:
 #### Wrong Openzeppelin Parameter
 A look at the pointer from the function below from PrincipalToken.sol contract shows that a call is made to Openzeppelin 4626 contract at [L214](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/ef68ac3ed83f85e4ce078b26170280c468ffeabb/contracts/token/ERC20/extensions/ERC4626.sol#L214), the problem is that the function uses shares in it parameter however the code below shows that instead of also using shares directly, it was converted to IBTS which is wrong, shares should be used directly.
 https://github.com/code-423n4/2024-02-spectra/blob/main/src/tokens/PrincipalToken.sol#L235
