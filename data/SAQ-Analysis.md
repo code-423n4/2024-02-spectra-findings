@@ -23,32 +23,32 @@ no | File |
 [Github-Link](https://github.com/code-423n4/2024-02-spectra/blob/main/src/proxy/AMBeacon.sol)
 
 <details>
+
 <summary>see instances</summary>
 
 #### Admin Abuse Risks:
 
-* <b>Access Control Mechanism </b>: The contract uses the `AccessManaged` contract from OpenZeppelin for access control instead of Ownable.This implies that access control is managed through roles assigned by an external contract (`Access Manager`). Admin abuse risks are mitigated through role-based access control.
+* **Access Control Mechanism**: The contract uses the `AccessManaged` contract from OpenZeppelin for access control instead of Ownable.This implies that access control is managed through roles assigned by an external contract (`Access Manager`). Admin abuse risks are mitigated through role-based access control.
 
 
 
 #### Systemic Risks:
 
-* <b>Implementation Upgradability</b>: The contract is designed to be upgradeable, allowing the authority (admin) to change the implementation contract address. While upgradability can be a useful feature for fixing bugs or adding new functionalities, it introduces the risk of unintended changes or malicious upgrades. The `restricted` modifier is used to limit upgrade functionality to authorized addresses.
+* **Implementation Upgradability**: The contract is designed to be upgradeable, allowing the authority (admin) to change the implementation contract address. While upgradability can be a useful feature for fixing bugs or adding new functionalities, it introduces the risk of unintended changes or malicious upgrades. The `restricted` modifier is used to limit upgrade functionality to authorized addresses.
 
 #### Technical Risks:
 
-* <b>Code Validation</b>: The contract checks if the new implementation code length is greater than zero before setting it. This is a basic validation to ensure that the provided address corresponds to a valid contract. However, it doesn't guarantee the correctness or security of the new implementation.
+* **Code Validation**: The contract checks if the new implementation code length is greater than zero before setting it. This is a basic validation to ensure that the provided address corresponds to a valid contract. However, it doesn't guarantee the correctness or security of the new implementation.
 
 
 #### Integration Risks:
 
-* <b>Dependencies</b>: The contract relies on external dependencies from OpenZeppelin, specifically the `IBeacon` interface and the `AccessManaged` contract. The correctness and security of this contract depend on the reliability and security of these external dependencies.
-
+* **Dependencies**: The contract relies on external dependencies from OpenZeppelin, specifically the `IBeacon` interface and the `AccessManaged` contract. The correctness and security of this contract depend on the reliability and security of these external dependencies.
 
 
 #### Non-Standard Token Risks:
 
-* <b>Token Independence</b>: This contract doesn't involve any standard token functionality. It is primarily concerned with managing the implementation address used by beacon proxies.
+* **Token Independence**: This contract doesn't involve any standard token functionality. It is primarily concerned with managing the implementation address used by beacon proxies.
 
 
 #### Summary
@@ -70,27 +70,27 @@ The contract appears to be well-structured and leverages OpenZeppelin contracts 
 
 #### Admin Abuse Risks:
 
-* <b>Access Control Mechanism</b>: The contract utilizes the `AccessManaged` contract from OpenZeppelin for access control instead of Ownable. This suggests that access control is managed through roles assigned by an external contract (`Access Manager`). Admin abuse risks are mitigated through role-based access control.
+* **Access Control Mechanism**: The contract utilizes the `AccessManaged` contract from OpenZeppelin for access control instead of Ownable. This suggests that access control is managed through roles assigned by an external contract (`Access Manager`). Admin abuse risks are mitigated through role-based access control.
 
 
 
 #### Systemic Risks:
 
-* <b>Proxy Administration</b>: This contract serves as an auxiliary contract meant to be assigned as the admin of a `TransparentUpgradeableProxy`. Administering proxies introduces the risk of unintended upgrades or malicious changes to the proxy's implementation contract. The `restricted` modifier is used to restrict upgrade functionality to authorized addresses.
+* **Proxy Administration**: This contract serves as an auxiliary contract meant to be assigned as the admin of a `TransparentUpgradeableProxy`. Administering proxies introduces the risk of unintended upgrades or malicious changes to the proxy's implementation contract. The `restricted` modifier is used to restrict upgrade functionality to authorized addresses.
 
 #### Technical Risks:
 
-* <b>Code Validation</b>: The contract follows a standardized upgrade interface (`UPGRADE_INTERFACE_VERSION`) to signal the supported upgrade methods. The `upgradeAndCall` function is designed to upgrade the proxy to a new implementation and call a function on the new implementation. The requirements are set to ensure the safety of the upgrade process.
+* **Code Validation**: The contract follows a standardized upgrade interface (`UPGRADE_INTERFACE_VERSION`) to signal the supported upgrade methods. The `upgradeAndCall` function is designed to upgrade the proxy to a new implementation and call a function on the new implementation. The requirements are set to ensure the safety of the upgrade process.
 
 
 #### Integration Risks:
 
-* <b>Dependencies</b>: The contract relies on external dependencies from OpenZeppelin, specifically the `IAMTransparentUpgradeableProxy` interface and the `AccessManaged` contract. The correctness and security of this contract depend on the reliability and security of these external dependencies.
+* **Dependencies**: The contract relies on external dependencies from OpenZeppelin, specifically the `IAMTransparentUpgradeableProxy` interface and the `AccessManaged` contract. The correctness and security of this contract depend on the reliability and security of these external dependencies.
 
 
 #### Non-Standard Token Risks:
 
-* <b>Token Independence</b>: This contract doesn't involve any standard token functionality. It is primarily concerned with proxy administration and upgradeability.
+* **Token Independence**: This contract doesn't involve any standard token functionality. It is primarily concerned with proxy administration and upgradeability.
 
 
 #### Summary
@@ -111,27 +111,27 @@ The contract appears to be well-structured and leverages OpenZeppelin contracts 
 
 #### Admin Abuse Risks:
 
-* <b>Access Control Mechanism</b>: The contract utilizes the `AMProxyAdmin` contract for proxy administration, which implements access control through the `AccessManaged`contract. The admin access is restricted and managed by an external contract, mitigating admin abuse risks through proper access controls.
+* **Access Control Mechanism**: The contract utilizes the `AMProxyAdmin` contract for proxy administration, which implements access control through the `AccessManaged`contract. The admin access is restricted and managed by an external contract, mitigating admin abuse risks through proper access controls.
 
 
 
 #### Systemic Risks:
 
-* <b>Proxy Structure</b>: This contract follows the transparent proxy pattern, using the `ERC1967Proxy` contract. The admin, responsible for upgrades, is initialized during deployment and cannot be changed afterward, ensuring controlled access to upgrade functionality. The contract has a dedicated admin account for upgrade purposes.
+* **Proxy Structure**: This contract follows the transparent proxy pattern, using the `ERC1967Proxy` contract. The admin, responsible for upgrades, is initialized during deployment and cannot be changed afterward, ensuring controlled access to upgrade functionality. The contract has a dedicated admin account for upgrade purposes.
 
 #### Technical Risks:
 
-* <b>Upgrade Mechanism</b>: The contract uses the ERC-1967 upgrade mechanism. The `upgradeToAndCall` function allows for upgrading to a new implementation and calling an initialization function on the new implementation. The `_fallback` function ensures that the admin can only perform upgrades, preventing unintended calls.
+* **Upgrade Mechanism**: The contract uses the ERC-1967 upgrade mechanism. The `upgradeToAndCall` function allows for upgrading to a new implementation and calling an initialization function on the new implementation. The `_fallback` function ensures that the admin can only perform upgrades, preventing unintended calls.
 
 
 #### Integration Risks:
 
-* <b>Dependencies</b>: The contract relies on external dependencies from OpenZeppelin, such as `ERC1967Utils` and the `IAMTransparentUpgradeableProxy` interface. The correctness and security of this contract depend on the reliability and security of these external dependencies.
+* **Dependencies**: The contract relies on external dependencies from OpenZeppelin, such as `ERC1967Utils` and the `IAMTransparentUpgradeableProxy` interface. The correctness and security of this contract depend on the reliability and security of these external dependencies.
 
 
 #### Non-Standard Token Risks:
 
-* <b>Token Independence</b>: This contract is not directly related to token functionality. It focuses on the proxy upgradeability pattern and admin management.
+* **Token Independence**: This contract is not directly related to token functionality. It focuses on the proxy upgradeability pattern and admin management.
 
 
 #### Summary
@@ -339,5 +339,7 @@ The correct functioning of this contract heavily depends on the correct behavior
 </details>
 
 
+
+
 ### Time spent:
-09 hours
+9 hours
