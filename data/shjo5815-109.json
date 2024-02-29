@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "shjo5815",
+  "risk": "3",
+  "title": "The claimed yield of a user is impacted by other users' activity and the yield computation could be inconsistent.",
+  "issueId": 109,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/109"
+}
