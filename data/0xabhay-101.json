@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "0xabhay",
+  "risk": "3",
+  "title": "Inconsistent ERC-4626 asset() Function Response",
+  "issueId": 101,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/101"
+}
