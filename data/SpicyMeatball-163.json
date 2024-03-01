@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "SpicyMeatball",
+  "risk": "2",
+  "title": "Protocol may be incompatible with some OpenZeppelin ERC4626 based vaults",
+  "issueId": 163,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/163"
+}
