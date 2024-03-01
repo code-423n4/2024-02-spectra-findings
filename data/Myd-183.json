@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "Myd",
+  "risk": "2",
+  "title": "The IBT's transfer and `transferFrom` functions altering balances that could manipulate Spectra's `ibtRate` calculation.",
+  "issueId": 183,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/183"
+}
