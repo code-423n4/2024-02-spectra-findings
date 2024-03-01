@@ -19,10 +19,9 @@ https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb
         uint256 ibtOfPTInRay = userYTBalanceInRay.mulDiv(_oldPTRate, _oldIBTRate);
 ```
 
-Note here, ibtOfPTInRay perform the division first, which later multiplied to `_ibtRate - _oldIBTRate` in newYieldInIBTRay calculation. This result, in less output yield for user. 
+Here, userYTBalanceInRay is divided by _oldIBTRate, which result ibtOfPTInRay later multiplied to `_ibtRate - _oldIBTRate` in newYieldInIBTRay calculation. Due to rounding issue, this results in less output ibtYield for user. 
 
 https://github.com/crytic/slither/wiki/Detector-Documentation#divide-before-multiply
 
-**Recommendation**
+### Recommendation
 Perform multiply before the division. 
-
