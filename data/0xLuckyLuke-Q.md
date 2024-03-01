@@ -1,6 +1,6 @@
-## Addressing Maturity-Related Redemption Inconsistencies
+# Addressing Maturity-Related Redemption Inconsistencies
 
-### Summary
+## Summary
 The function _beforeRedeem allows users to redeem shares without considering maturity, which contradicts standard behavior.
 
 https://eips.ethereum.org/EIPS/eip-5095
@@ -8,21 +8,21 @@ https://eips.ethereum.org/EIPS/eip-5095
 
 https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/tokens/PrincipalToken.sol#L805
 
-### Vulnerability Detail
+## Vulnerability Detail
 Users can initiate redemptions regardless of the maturity status of the shares. This violates the expected behavior specified in EIP-5095, which recommends redemptions only after maturity.
 
-### Impact
+## Impact
 Off-chain information may be inaccurate as redemptions can occur before maturity, leading to potential misinformation.
 Contradicts standard behavior, potentially causing confusion among users and integrators.
 
-### Tool used
+## Tool used
 Manual Review
 
-### Recommendation
+## Recommendation
 Implement maturity checks to ensure redemptions occur only after maturity, adhering to the EIP-5095 standard. Enhance off-chain communication to provide accurate information regarding redemption eligibility and maturity status.
 
 
-## Streamlining Token Handling in Flash Loan Functions
+# Streamlining Token Handling in Flash Loan Functions
 Simplified Token Handling: The _token parameter in the flashLoan function seems unnecessary since the token address (ibt) remains constant throughout the function. Removing this parameter would streamline the interface.
 
 Efficient Loan Calculation: The maxFlashLoan function accurately determines the maximum loan amount based on the contract's token balance, returning 0 if the token address differs from ibt.
@@ -63,7 +63,7 @@ function flashLoan(
 ```
 
 
-## Enhancing _beforeWithdraw/_beforeRedeem Preparations:
+# Enhancing _beforeWithdraw/_beforeRedeem Preparations:
 
 Conditional Optimization:
 
