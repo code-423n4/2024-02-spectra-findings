@@ -50,6 +50,10 @@ Refactored Logic:
 Reorder conditionals to prioritize permit checking for non-owner callers.
 Consolidate conditional checks for improved readability and efficiency.
 
+https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/tokens/PrincipalToken.sol#L805
+
+https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/tokens/PrincipalToken.sol#L828
+
 ```diff
     if (_owner != msg.sender) {
 +       // Permit check for non-owner callers
@@ -58,8 +62,3 @@ Consolidate conditional checks for improved readability and efficiency.
 +       }
     ...
 ```
-
-
-https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/tokens/PrincipalToken.sol#L805
-
-https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/tokens/PrincipalToken.sol#L828
