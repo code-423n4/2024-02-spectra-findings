@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "seerether",
+  "risk": "3",
+  "title": "The user's yield is updated in beforeYtTransfer. This means yield will not be updated if only PT is transferred. ",
+  "issueId": 254,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/254"
+}
