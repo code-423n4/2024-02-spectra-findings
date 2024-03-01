@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "thisvishalsingh",
+  "risk": "2",
+  "title": " `PrincipalToken::maxDeposit` will not work for some tokens that don't support `type(uint256).max` amount.",
+  "issueId": 242,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/242"
+}
