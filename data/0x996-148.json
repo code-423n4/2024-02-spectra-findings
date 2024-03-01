@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "0x996",
+  "risk": "3",
+  "title": "The `PrincipalToken::updateYield` function lacks access control, which could result in arbitrary users being able to update their IBT yield.",
+  "issueId": 148,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/148"
+}
