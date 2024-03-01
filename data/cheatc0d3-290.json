@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "cheatc0d3",
+  "risk": "2",
+  "title": "Lack of slippage controls in PrincipalToken::deposit and PrincipalToken::withdraw",
+  "issueId": 290,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/290"
+}
