@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "Toshii",
+  "risk": "3",
+  "title": "YieldToken holders are able to effectively steal collateral from PrincipalToken holders when there is a temporary down-rebase in the ERC4626 token's yield",
+  "issueId": 305,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/305"
+}
