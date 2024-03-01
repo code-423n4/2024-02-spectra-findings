@@ -19,9 +19,13 @@ https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb
         uint256 ibtOfPTInRay = userYTBalanceInRay.mulDiv(_oldPTRate, _oldIBTRate);
 ```
 
-Here, userYTBalanceInRay is divided by _oldIBTRate, which result ibtOfPTInRay later multiplied to `_ibtRate - _oldIBTRate` in newYieldInIBTRay calculation. Due to rounding issue, this results in less output ibtYield for user. 
+Here, userYTBalanceInRay is divided by _oldIBTRate, which result `ibtOfPTInRay` later multiplied to `_ibtRate - _oldIBTRate` in newYieldInIBTRay calculation. Due to division before multiplication, some yields from IBTs will be lost in rounding. 
 
-https://github.com/crytic/slither/wiki/Detector-Documentation#divide-before-multiply
+Similarly, when `_oldPTRate > _ptRate` and `_ibtRate < _oldIBTRate` becomes true, the negative yield `expectedNegativeYieldInAssetRay` will generate from the dropped ibtRate. 
+
+This `expectedNegativeYieldInAssetRay` will be less than the expected, due to similar rounding as above. Results in, protocol bearing more losses instead user. 
+
+https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/libraries/PrincipalTokenUtil.sol#L104-L107
 
 ### Recommendation
 Perform multiply before the division. 
