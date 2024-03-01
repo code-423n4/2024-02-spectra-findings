@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "0xGreyWolf",
+  "risk": "2",
+  "title": "`PricipalToken::deposit() @ line 188` lacks implementation of transaction deadline",
+  "issueId": 175,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/175"
+}
