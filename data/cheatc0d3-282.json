@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "cheatc0d3",
+  "risk": "3",
+  "title": "Post-Expiry Rate Manipulation in PrincipalToken due to Lack of Access Control",
+  "issueId": 282,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/282"
+}
