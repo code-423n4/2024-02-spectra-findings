@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "0xbrett8571",
+  "risk": "2",
+  "title": "The PrincipalToken contract is potentially vulnerable to manipulated rate returns from the external IBT (ERC4626 vault).",
+  "issueId": 164,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/164"
+}
