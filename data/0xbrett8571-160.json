@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "0xbrett8571",
+  "risk": "2",
+  "title": "The consistent usage of ceiling rounding in `_computeTokenizationFee` Systematically overcharges users, enabling fund drainage with uncapped fees.",
+  "issueId": 160,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/160"
+}
