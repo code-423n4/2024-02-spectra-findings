@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "Evo",
+  "risk": "3",
+  "title": "An Attacker can manipulate the IBTRate on PrincpleToken Contract resulting bad PTRate ",
+  "issueId": 306,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/306"
+}
