@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "lsaudit",
+  "risk": "2",
+  "title": "`beforeYtTransfer()` not used before yield transfer",
+  "issueId": 126,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/126"
+}
