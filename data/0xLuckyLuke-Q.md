@@ -1,16 +1,15 @@
-# L-1 Addressing Maturity-Related Redemption Inconsistencies
+# [L-1] Addressing Maturity-Related Redemption Inconsistencies
 
 ## Summary
-The function _beforeRedeem allows users to redeem shares without considering maturity, which contradicts standard behavior.
+Users can initiate redemptions regardless of the maturity status of the shares. This violates the expected behavior specified in `EIP-5095`, which recommends redemptions only after maturity.
+
+## Vulnerability Detail
+The function `PrincipalToken::_beforeRedeem` allows users to redeem shares without considering maturity, which contradicts `EIP-5095` standard behavior which is mentioned in the following:
 
 https://eips.ethereum.org/EIPS/eip-5095
 "PTs mature at a precise second, but given the reactive nature of smart contracts, there can’t be an event marking maturity, because there is no guarantee of any activity at or after maturity. Emitting an event to notify of maturity in the first transaction after maturity would be imprecise and expensive. Instead, integrators are recommended to either use the first Redeem event, or to track themselves when each PT is expected to have matured."
 
 https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/tokens/PrincipalToken.sol#L805
-
-## Vulnerability Detail
-Users can initiate redemptions regardless of the maturity status of the shares. This violates the expected behavior specified in EIP-5095, which recommends redemptions only after maturity.
-
 ## Impact
 Off-chain information may be inaccurate as redemptions can occur before maturity, leading to potential misinformation.
 Contradicts standard behavior, potentially causing confusion among users and integrators.
@@ -19,32 +18,34 @@ Contradicts standard behavior, potentially causing confusion among users and int
 Manual Review
 
 ## Recommendation
-Implement maturity checks to ensure redemptions occur only after maturity, adhering to the EIP-5095 standard. Enhance off-chain communication to provide accurate information regarding redemption eligibility and maturity status.
+Implement maturity checks to ensure redemptions occur only after maturity, adhering to the `EIP-5095` standard. Enhance off-chain communication to provide accurate information regarding redemption eligibility and maturity status.
 
-# L-2 Return value of updateYield() is not validated
+# [L-2] Return value of updateYield() is not validated
 
 ## Proof of Concept
-
+The `PrincipalToken::updateYield` function returns the updated user yield. 
 ```solidity
     function beforeYtTransfer(address _from, address _to) external override {
         if (msg.sender != yt) {
             revert UnauthorizedCaller();
         }
-        updateYield(_from);//@audit H: doesn't check the return value
+        updateYield(_from);
         updateYield(_to);
     }
 ```
 ## Tools Used
 VScode
 ## Recommended Mitigation Steps
-check the return value of updateYield(_from)
+Consider checking the return value to be valid.
 
-# I-1 Streamlining Token Handling in Flash Loan Functions
+# [I-1] Streamlining Token Handling in Flash Loan Functions
+
+## Details
 Simplified Token Handling: The _token parameter in the flashLoan function seems unnecessary since the token address (ibt) remains constant throughout the function. Removing this parameter would streamline the interface.
 
-Efficient Loan Calculation: The maxFlashLoan function accurately determines the maximum loan amount based on the contract's token balance, returning 0 if the token address differs from ibt.
+**Efficient Loan Calculation:** The maxFlashLoan function accurately determines the maximum loan amount based on the contract's token balance, returning 0 if the token address differs from ibt.
 
-Secure Fee Computation: The flashFee function calculates fees exclusively for the designated token (ibt) and ensures safety by reverting with an AddressError if the provided token address doesn't match.
+**Secure Fee Computation:** The flashFee function calculates fees exclusively for the designated token (ibt) and ensures safety by reverting with an AddressError if the provided token address doesn't match.
 
 Overall: The functions demonstrate clear logic and adhere to best practices for flash loan implementations, with potential for interface simplification and efficient token handling.
 
@@ -79,8 +80,7 @@ function flashLoan(
 }
 ```
 
-
-# I-2 - Only `msg.sender` can redeem and withdraw
+# [I-2] Only `msg.sender` can redeem and withdraw
 ## Impact
 It can reduce the level of compatiblity and integrity in different situations and with other platforms. 
 ## Proof of Concept
@@ -97,6 +97,3 @@ in [_beforeRedeem](https://github.com/code-423n4/2024-02-spectra/blob/383202d0b8
 VScode
 ## Recommended Mitigation Steps
 It is recommended that when input address is not the same as `msg.sender` check if `msg.sender` has alloance from the `_owner` address.  
-
-https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/tokens/PrincipalToken.sol#L805
-https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/tokens/PrincipalToken.sol#L828
