@@ -25,6 +25,7 @@ Calls _getPTandIBTRates() unconditionally, potentially leading to redundant func
 Refactored Improvement:
 Modified to avoid unnecessary function calls when the expiry condition is met.
 Enhances gas efficiency and streamlines the update process.
+if this function be called After maturity and `PrincipalToken::ratesAtExpiryStored` is false then the `PrincipalToken::_getCurrentPTandIBTRates` will be called twice. also in any case second if will be checked that is not necessary.
 
 https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/tokens/PrincipalToken.sol#L879
 
