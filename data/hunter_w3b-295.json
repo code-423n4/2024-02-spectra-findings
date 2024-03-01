@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "hunter_w3b",
+  "risk": "2",
+  "title": "Fee on transfer tokens can lead to incorrect approval",
+  "issueId": 295,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/295"
+}
