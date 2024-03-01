@@ -1,5 +1,6 @@
 ## [L-01]The maxWithdraw method does not meet the eip-5095 standard.
-eip-5095 requires protocol pause to return 0, the implementation is revert
+eip-5095 requires protocol pause to return 0, the implementation is revert.This can lead to unexpected situations when integrators integrate according to the eip-5095 standard. It is recommended that the eip-5095 standard be implemented so that exceptions return 0 instead of revert.
+
 https://eips.ethereum.org/EIPS/eip-5095#maxwithdraw
 ```
 MUST factor in both global and user-specific limits, like if withdrawals are entirely disabled (even temporarily) it MUST return 0.
@@ -30,6 +31,7 @@ https://github.com/OpenZeppelin/openzeppelin-contracts-upgradeable/blob/67b51f0e
 And convertToUnderlying() will also revert, see [L-02].
 
 ## [L_02] previewRedeem、convertToPrincipal、convertToUnderlying can be revert does not comply with eip-5095.
+eip-5095 standard unless overflow, can not revert. This will lead to the integrator in accordance with the eip-5095 standard integration, the emergence of unexpected situations. It is recommended to implement according to eip-5095 standard, exceptions return 0 instead of revert.
 eip-5095 requirements:
 https://eips.ethereum.org/EIPS/eip-5095#converttounderlying
 ```
@@ -62,6 +64,8 @@ https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb
 ```
 
 ## [L-03] The time at which redeem can be executed does not comply with eip-5095.
+eip-5095 requires that the underlying assets cannot be extracted using redeem before expiration. It is recommended to use withdraw method to withdraw the underlying assets before the expiration date. withdraw has no limitation on the usage time.
+
 eip-5095 requirements:
 https://eips.ethereum.org/EIPS/eip-5095#redeem
 ```
