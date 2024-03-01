@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "14si2o_Flint",
+  "risk": "3",
+  "title": "Users can freely set ibtRate without depositing ibt or buying YT. Then using flashloans, they are assured of a risk-free instant yield when the ibtrate rises and they can potentially drain the entire contract balance.",
+  "issueId": 208,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/208"
+}
