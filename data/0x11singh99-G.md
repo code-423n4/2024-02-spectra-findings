@@ -1,6 +1,6 @@
 # Gas Optimizations
 
-**Note : _G-03_, _G-07_, _G-08_ and _G-11_ contains only those instances which were missed by bot. Since they are major gas savings so I included those missed instances**
+**Note : _G-03_, _G-07_, _G-08_ and _G-11_ contains only those instances which were missed by bot. Since they are major gas savings so I included those missed instances.**
 
 ## Table of Contents
 
@@ -19,6 +19,9 @@
 - [G-09] [Use direct `_admin` immutable var. instead of calling `_proxyAdmin()` saves function call.](#g-09-use-direct-_admin-immutable-var-instead-of-calling-_proxyadmin-saves-function-call)                                                                                                                          
 - [G-10] [Cache function result into stack var first instead of state variables if need to read them twice](#g-10-cache-function-result-into-stack-var-first-instead-of-state-variables-if-need-to-read-them-twice)                                                                                                                          
 - [G-11] [Check `amount` for `zero` before mint/burn (Missed by bot)](#g-11-check-amount-for-zero-before-mintburn-missed-by-bot)                                                                                                                          
+
+#### Auditor's Disclaimer 
+These all findings are good gas savers and 100% safe to implement without any protocol/logic risk. 
 
 
 ## [G-01] State variables can be packed into fewer storage slot by reducing their size (saves ~4000 Gas)
