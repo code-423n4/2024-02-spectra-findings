@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "AgileJune",
+  "risk": "3",
+  "title": "TokenizedFee is not applied as expected with the user's discount fee.",
+  "issueId": 124,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/124"
+}
