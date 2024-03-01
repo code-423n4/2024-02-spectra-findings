@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "0xGreyWolf",
+  "risk": "2",
+  "title": "In line 176, `PrincipalToken::deposit` allows users to deposit without slippage protection",
+  "issueId": 152,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/152"
+}
