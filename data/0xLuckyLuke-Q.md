@@ -21,6 +21,23 @@ Manual Review
 ## Recommendation
 Implement maturity checks to ensure redemptions occur only after maturity, adhering to the EIP-5095 standard. Enhance off-chain communication to provide accurate information regarding redemption eligibility and maturity status.
 
+# L-2 Return value of updateYield() is not validated
+
+## Proof of Concept
+
+```solidity
+    function beforeYtTransfer(address _from, address _to) external override {
+        if (msg.sender != yt) {
+            revert UnauthorizedCaller();
+        }
+        updateYield(_from);//@audit H: doesn't check the return value
+        updateYield(_to);
+    }
+```
+## Tools Used
+VScode
+## Recommended Mitigation Steps
+
 
 # I-1 Streamlining Token Handling in Flash Loan Functions
 Simplified Token Handling: The _token parameter in the flashLoan function seems unnecessary since the token address (ibt) remains constant throughout the function. Removing this parameter would streamline the interface.
