@@ -80,26 +80,23 @@ function flashLoan(
 ```
 
 
-# I-2 Enhancing _beforeWithdraw/_beforeRedeem Preparations:
+# I-2 - Only `msg.sender` can redeem and withdraw
+## Impact
+It can reduce the level of compatiblity and integrity in different situations and with other platforms. 
+## Proof of Concept
+in [_beforeRedeem](https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/tokens/PrincipalToken.sol#L806) and [_beforeWithdraw](https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/tokens/PrincipalToken.sol#L829) functions of the `PrincipalToken` contract if `msg.sender` is not equal to the owner, it reverts.
+```solidity
+ function _beforeRedeem(uint256 _shares, address _owner) internal nonReentrant whenNotPaused {
+        if (_owner != msg.sender) {
+            revert UnauthorizedCaller();
+        }
+     ...
+```
 
-Conditional Optimization:
-
-The function checks _owner against msg.sender and reverts if they differ.
-Permit verification should occur only when _owner is not the caller.
-Refactored Logic:
-
-Reorder conditionals to prioritize permit checking for non-owner callers.
-Consolidate conditional checks for improved readability and efficiency.
+## Tools Used
+VScode
+## Recommended Mitigation Steps
+It is recommended that when input address is not the same as `msg.sender` check if `msg.sender` has alloance from the `_owner` address.  
 
 https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/tokens/PrincipalToken.sol#L805
-
 https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/tokens/PrincipalToken.sol#L828
-
-```diff
-    if (_owner != msg.sender) {
-+       // Permit check for non-owner callers
-+       if (!checkPermit(_owner)) {
-            revert UnauthorizedCaller();
-+       }
-    ...
-```
