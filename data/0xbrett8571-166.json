@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "0xbrett8571",
+  "risk": "2",
+  "title": "If the underlying asset amount in the IBT changes outside of Spectra's control, it could lead to inaccuracies in the ibtRate tracking.",
+  "issueId": 166,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/166"
+}
