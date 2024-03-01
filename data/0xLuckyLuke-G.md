@@ -1,4 +1,4 @@
-## Optimizing Rate Update Functionality:
+# Optimizing Rate Update Functionality:
 
 Original Implementation:
 Calls _getPTandIBTRates() unconditionally, potentially leading to redundant function calls.
