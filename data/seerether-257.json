@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "seerether",
+  "risk": "3",
+  "title": "The rewardsProxy code is executed via delegatecall, which is dangerous",
+  "issueId": 257,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/257"
+}
