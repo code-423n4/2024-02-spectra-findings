@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "sl1",
+  "risk": "2",
+  "title": "PrincipalToken does not comply with EIP5095",
+  "issueId": 233,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/233"
+}
