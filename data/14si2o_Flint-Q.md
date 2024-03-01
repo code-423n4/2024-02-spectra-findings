@@ -25,16 +25,7 @@ The `Mint` event in `PrincipalToken.sol` sets the msg.sender as originator ('fro
 
 The recommandation is to set the 'from' in the Mint event to address(0) to be consistent with standard minting events. 
 
-## [L-03] Broken Invariant: Equal Supply PT==YT
-
-The protocol stated the following invariant in the contest README.md: "PT and its YT should have an equal supply at all times"
-
-In the `_beforeRedeem` function, YT and PT are burned in equal amounts before expiry, but only PT is burned after expiry. 
-Therefore, after expiry, the stated invariant is broken. 
-
-This currently has no impact so I submit this as a low. 
-
-## [L-04] Inconsistent application of SAFETY_BOUND
+## [L-03] Inconsistent application of SAFETY_BOUND
 
 In `_computeYield` in `PrincipalTokenUtil.sol`, a `SAFETY_BOUND` is applied with the stated goal of favoring the protocol in case of approximation. 
 
