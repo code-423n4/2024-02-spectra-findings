@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "seerether",
+  "risk": "3",
+  "title": "The ratesAtExpiryStored flag is not protected by access control. Anyone can call storeRatesAtExpiry() after expiry ",
+  "issueId": 289,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/289"
+}
