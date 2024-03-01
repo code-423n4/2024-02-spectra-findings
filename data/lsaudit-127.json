@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "lsaudit",
+  "risk": "2",
+  "title": "`_convertIBTsToSharesPreview()` rounds in the wrong direction",
+  "issueId": 127,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/127"
+}
