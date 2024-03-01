@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "ReadyPlayer2",
+  "risk": "3",
+  "title": "There is no reentrancy protection for principal token flashloan function, allowing attackers to drain IBT",
+  "issueId": 284,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/284"
+}
