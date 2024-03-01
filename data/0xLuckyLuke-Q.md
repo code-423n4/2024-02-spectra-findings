@@ -37,3 +37,29 @@ function flashLoan(
     return true;
 }
 ```
+
+
+## Enhancing _beforeWithdraw/_beforeRedeem Preparations:
+
+Conditional Optimization:
+
+The function checks _owner against msg.sender and reverts if they differ.
+Permit verification should occur only when _owner is not the caller.
+Refactored Logic:
+
+Reorder conditionals to prioritize permit checking for non-owner callers.
+Consolidate conditional checks for improved readability and efficiency.
+
+```diff
+    if (_owner != msg.sender) {
++       // Permit check for non-owner callers
++       if (!checkPermit(_owner)) {
+            revert UnauthorizedCaller();
++       }
+    ...
+```
+
+
+https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/tokens/PrincipalToken.sol#L805
+
+https://github.com/code-423n4/2024-02-spectra/blob/383202d0b84985122fe1ba53cfbbb68f18ba3986/src/tokens/PrincipalToken.sol#L828
