@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "MSaptarshi",
+  "risk": "3",
+  "title": "Malicious Users Can Drain The Assets Of Vault. (Due to not being ERC4626 Complaint)",
+  "issueId": 143,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/143"
+}
