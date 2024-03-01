@@ -1,4 +1,4 @@
-# Addressing Maturity-Related Redemption Inconsistencies
+# L-1 Addressing Maturity-Related Redemption Inconsistencies
 
 ## Summary
 The function _beforeRedeem allows users to redeem shares without considering maturity, which contradicts standard behavior.
@@ -22,7 +22,7 @@ Manual Review
 Implement maturity checks to ensure redemptions occur only after maturity, adhering to the EIP-5095 standard. Enhance off-chain communication to provide accurate information regarding redemption eligibility and maturity status.
 
 
-# Streamlining Token Handling in Flash Loan Functions
+# I-1 Streamlining Token Handling in Flash Loan Functions
 Simplified Token Handling: The _token parameter in the flashLoan function seems unnecessary since the token address (ibt) remains constant throughout the function. Removing this parameter would streamline the interface.
 
 Efficient Loan Calculation: The maxFlashLoan function accurately determines the maximum loan amount based on the contract's token balance, returning 0 if the token address differs from ibt.
@@ -63,7 +63,7 @@ function flashLoan(
 ```
 
 
-# Enhancing _beforeWithdraw/_beforeRedeem Preparations:
+# I-2 Enhancing _beforeWithdraw/_beforeRedeem Preparations:
 
 Conditional Optimization:
 
