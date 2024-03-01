@@ -37,7 +37,7 @@ Implement maturity checks to ensure redemptions occur only after maturity, adher
 ## Tools Used
 VScode
 ## Recommended Mitigation Steps
-
+check the return value of updateYield(_from)
 
 # I-1 Streamlining Token Handling in Flash Loan Functions
 Simplified Token Handling: The _token parameter in the flashLoan function seems unnecessary since the token address (ibt) remains constant throughout the function. Removing this parameter would streamline the interface.
