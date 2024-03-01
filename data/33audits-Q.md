@@ -44,6 +44,24 @@ Manual review.
 
 Consider adding a contract existence check and reverting if no code exists at the rewardsProxy address.
 
+## Title
+
+Add a deadline check to the initialize function
+
+## Link
+
+https://github.com/perspectivefi/spectra-core/blob/fec59dc6720fb4861b07b30845ef2c1a42f947bf/src/tokens/PrincipalToken.sol#L133
+
+## Description
+
+The expiry date is extremely important to the functionality of the PrincipalToken contract. After the expiry date passed the value of YT will always be zero. If a malicious miner wanted to exploit the system and would benefit by YT being zero they could refuse to mine the deployment/initialize transaction after the expiry date. Since this value is being set by `duration + block.timestamp` it is possible for an attacker to exploit this.
+
+## Recommendations
+
+Consider adding a deadline check so that the expiry date isn't manipulated and if it is the deployment transaction will revert.
+
+
+
 
 
 
