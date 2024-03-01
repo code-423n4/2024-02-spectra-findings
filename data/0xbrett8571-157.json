@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "0xbrett8571",
+  "risk": "2",
+  "title": "Lack of state synchronization allows IBT manipulation.",
+  "issueId": 157,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/157"
+}
