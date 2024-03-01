@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "lsaudit",
+  "risk": "2",
+  "title": "Function `claimFees()` can be called even when contrac is paused",
+  "issueId": 132,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/132"
+}
