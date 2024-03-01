@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "0x996",
+  "risk": "3",
+  "title": "`PrincipalToken::claimYield()` will allow users to claim yield before `expiry/maturity`.",
+  "issueId": 161,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/161"
+}
