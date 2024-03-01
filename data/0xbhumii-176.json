@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "0xbhumii",
+  "risk": "2",
+  "title": "Lack of chainID validation allows signatures to be re-used across forks",
+  "issueId": 176,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/176"
+}
