@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "thisvishalsingh",
+  "risk": "2",
+  "title": "Using `_mint()` can be dangerous",
+  "issueId": 277,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/277"
+}
