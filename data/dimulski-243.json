@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "dimulski",
+  "risk": "3",
+  "title": "Wrong decimals utilized in computingYield if underlying asset has less decimals than Yield Token",
+  "issueId": 243,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/243"
+}
