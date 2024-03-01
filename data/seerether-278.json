@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "seerether",
+  "risk": "3",
+  "title": "The owner of shares is not verified in the withdraw functions. This could allow anyone to burn someone else's shares via withdraw.",
+  "issueId": 278,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/278"
+}
