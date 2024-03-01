@@ -79,7 +79,7 @@ If `data` is empty, `msg.value` must be zero.
 should be changed to:
 
 ```
-If `data` is empty, `msg.value` must be zero. If `data` is empty and `msg.value` is zero - function will revert with `ERC1967NonPayable()`. This behavior helps to avoid stuck the `msg.value` in the contract. 
+If `data` is empty, `msg.value` must be zero. If `data` is empty and `msg.value` is not zero - function will revert with `ERC1967NonPayable()`. This behavior helps to avoid stuck the `msg.value` in the contract. 
 ```
 
 # [4] Change order of parameters in `if` condition
