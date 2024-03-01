@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "seerether",
+  "risk": "3",
+  "title": "When storing rates at expiry, there is no check that totalAssets > 0. This could allow rates to be stored when the vault is empty",
+  "issueId": 262,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/262"
+}
