@@ -1,0 +1,8 @@
+{
+  "contest": 338,
+  "handle": "0xbrett8571",
+  "risk": "2",
+  "title": "A non-standard ERC4626 vault could cause significant issues for Spectra.",
+  "issueId": 155,
+  "issueUrl": "https://github.com/code-423n4/2024-02-spectra-findings/issues/155"
+}
