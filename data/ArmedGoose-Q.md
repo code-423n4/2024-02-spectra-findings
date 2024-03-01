@@ -16,36 +16,5 @@ On the other hand, the amounts recovered from that source are probably not going
 Recommendation: Consider adding ability to specify % slippage, minimal amount, or set it to auto, if fee claiming is meant to be autonomous.
 
 
-## [I-03] Inconsistent / redundant code in flashloan logic
-
-In function [flashLoan](https://github.com/code-423n4/2024-02-spectra/blob/main/src/tokens/PrincipalToken.sol#L609), there is argument `_token` which can be set by user, and is user throughout the function code.
-
-The `flashLoan` utility is limited by the [maxFlashLoan](https://github.com/code-423n4/2024-02-spectra/blob/main/src/tokens/PrincipalToken.sol#L583) function, which currently says that if the requested token is not `ibt`, then return 0 effectively disallowing flashloans in other tokens. 
-
-Back to `flashLoan` function, at line 621, it says
-
-```
-        IERC20(ibt).safeTransfer(address(_receiver), _amount);
-```
-and in 628:
-```
-IERC20(ibt).safeTransferFrom(address(_receiver), address(this), _amount + fee);
-```
-
-and all other functions still use the argument `_token`. As of now, this makes sense, as only `ibt` is allowed. However, the code looks like it's prepared to be ready to loan also other tokens. But 
-
-Recommendation: Consider changing
-
-```
-        IERC20(_token).safeTransfer(address(_receiver), _amount);
-...
-IERC20(_token).safeTransferFrom(address(_receiver), address(this), _amount + fee);
-```
-
-To 
-
-```
-        IERC20(_token).safeTransfer(address(_receiver), _amount);
-...
-IERC20(_token).safeTransferFrom(address(_receiver), address(this), _amount + fee);
-```
+## [I-01] Consider adding a rescue/sweep function
+The `PrincipalToken` contract is used to transfer tokens to it. The flashloan function has a placeholder to custom token address. However, there is no utility to rescue tokens which might be sent to the contract. A function allowing the DAO for example to claim dust balance, but not considering IBTs or fees, might be helpful to prevent dust or mistakenly transferred tokens to be stuck on the contract. 
